@@ -24,7 +24,8 @@ admin.site.site_header = _("KasaDaka Voice Services")
 urlpatterns = [
     url(r'^', admin.site.urls),
     url(r'^vxml/', include('vsdk.service_development.urls')),
-] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+              ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 #if not settings.DEBUG:
 #        urlpatterns += urlpatterns('',

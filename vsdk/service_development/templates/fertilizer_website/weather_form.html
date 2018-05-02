@@ -1,0 +1,42 @@
+<html>
+
+<header>
+    {% load static %}
+
+    <link rel="stylesheet" type="text/css" href="{% static 'fertilizerapp/style.css' %}" />
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</header>
+
+<body>
+
+
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container">
+        <h1 class="display-4">Add weather condition</h1>
+        <p class="lead">Add a new weather condition into the form.</p>
+      </div>
+    </div>
+        <div class="container">
+            <form method="POST" action="">
+                {% csrf_token %}
+
+                {{ form.non_field_errors}}
+
+                <div class="form-group row">
+                    {{form.weather_condition.errors}}
+                    <label for="{{ form.weather_condition.id_for_label }}">Weather condition </label>
+                    {{ form.weather_condition }}
+                </div>
+
+
+                <input type="submit" class="btn btn-success" value="Save">
+            </form>
+
+            <a href="/vxml/add/fertilizer/"><button class="btn btn-info"> Go Back</button></a>
+
+        </div>
+
+</body>
+
+</html>
